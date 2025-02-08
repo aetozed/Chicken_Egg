@@ -1,0 +1,241 @@
+body {
+    margin: 0px;
+    font-family: "Alata", serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100vw;
+}
+.content {
+    display: grid;
+    width: 100vw;
+    grid-template-areas: "upper"
+    "lower";
+    grid-template-rows: 25% 75%;
+    height: 100vh;
+    margin: 0px;
+}
+.upper {
+    border-radius: 0rem 0.6rem 0.6rem;
+    grid-area: upper;
+    background: url('../asset_collection/bg_upper.png') no-repeat;
+    background-size: cover;   
+    background-position: center;
+    display: grid;
+    grid-template-areas: "header header"
+    "welcome dimmer";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 80%;
+
+}
+.header {
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: grid;
+    z-index: 100;
+    grid-template-areas: "logo navbar";
+    grid-template-columns: 10% 90%;
+    justify-items: center;
+    transition: background-color 0.5s ease;
+}
+.navbar {
+    grid-area: navbar;
+    padding-right: 4rem;
+    margin-top: 0.5rem;
+}
+.navbar a {
+    font-family: "Roboto", serif;
+    position: relative;
+    color: #777777;
+    font-weight: 500;
+    font-size: 0.75rem; /* 12px in rem assuming the root font-size is 16px */
+    text-decoration: none;
+    margin-left: 4rem;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: 100%;
+    left: 0;
+    background-color: #777777;
+    transition: .3s;
+    
+}
+.navbar a:hover::before {
+    width: 100%;
+    background-color: #000;
+}
+.navbar a:hover {
+    color: #000;
+}
+.logo {
+    grid-area: logo;
+    margin-left: 0.5rem;
+}
+.logo_ayam {
+    width: 2.375rem;
+    height: auto;
+}
+.navbar a.active::before {
+    background-color: #000000;
+    width: 100%;
+}
+.navbar a.active {
+    color: #000000;
+}
+
+.welcome {
+    grid-area: welcome;
+}
+.welcome-text-box {
+    width: fit-content;
+    justify-items: center;
+    transform: translate(2rem, 1rem);
+    background-color: #EBF8F9;
+    border-radius: 30%;  
+    padding: 0% 6%; 
+}
+.text-welcome {
+    font-family: "Source Code Pro", serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000;
+}
+.temp-box {
+    padding: 0.5rem;
+    width: fit-content;
+    justify-items: center;
+    transform: translate(2.5rem, 0.5rem);
+}
+.temp-text {
+    font-family: "Raleway", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+}
+.dimmer {
+    justify-items: center;
+    grid-area: dimmer;
+    align-content: center;
+}
+.dimmer-outside {
+    width: 9.5rem;
+    height: 6rem;
+    background-color:#DDEDE6 ;
+    align-content: center;
+    justify-items: center;
+    border-radius: 1.5rem;
+}
+.dimmer-inside {
+    width: 7rem;
+    height: 3.5rem;
+}
+.dimmer-text {
+    font-family: "Nunito", serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #000000;
+}
+.dimmer-bg {
+    width: 100%;
+    height: 2.3rem;
+    background-color: #B4B4B4;
+    border-radius: 0.6rem;
+    overflow: hidden;
+}
+.dimmer-slider {
+    display: grid;
+    height: 2.3rem;
+    background-color: #C8E6C9;
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+    align-content: center;
+    justify-items: center;    
+}
+.dimmer-value {
+    font-family: "Nunito", serif;
+    padding-left: 0.2rem;
+    font-size: 0.75rem;
+    color: #000000;
+    font-weight: 800;
+}
+.lower {
+    grid-area: lower;
+    display: grid;
+    grid-template-areas: "photo-text"
+    "collection-photo";
+    grid-template-rows: 10% 90%;
+}
+.photo-text {
+    grid-area: photo-text;
+    display: grid;
+}
+.the-text {
+    font-family: "Raleway", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+}
+.collection-photo {
+    grid-area: collection-photo;
+    display: grid;
+}
+.photo-box {
+    display: grid;
+    grid-template-areas: "img-icon img-name img-detail"
+    "photo-img photo-img photo-img";
+    grid-template-columns: 20% 70% 10%;
+    grid-template-rows: 20% 80%;
+    justify-items: center;
+    background-color: #FACC8F;
+    width: 7.5rem;
+    height: 7.8rem;
+    border-radius: 5%;
+}
+.img-icon {
+    display: grid;
+    grid-area: img-icon;
+    justify-items: center;
+    align-content: center;
+}
+.img-icon img {
+    width: 1rem;
+    height: auto;
+}
+.img-name {
+    display: grid;
+    grid-area: img-name;
+    justify-items: center;
+    align-content: center;
+}
+.img-detail {
+    display: grid;
+    grid-area: img-detail;
+    justify-items: center;
+    align-content: center;
+}
+.photo-img {
+    display: grid;
+    grid-area: photo-img;
+    justify-items: center;
+    align-content: center;
+}
+.photo-img img {
+    width: 7.1rem;
+    height: auto;
+}
+.icon1, .icon2, .icon3 {
+    margin: 0.5px 0px;
+    background-color: black;
+    border-radius: 50%;
+    width: 0.15rem;
+    height: 0.15rem;
+}
+.detail-ico {
+    display: flex;
+    flex-direction: column;
+}

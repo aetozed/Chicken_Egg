@@ -1,0 +1,495 @@
+body {
+    margin: 0px;
+    font-family: "Alata", serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100vw;
+}
+.content {
+    display: grid;
+    width: 100vw;
+    grid-template-areas: "upper"
+    "card"
+    "photo";
+    grid-template-rows: 25% 40% 35%;
+    height: 100vh;
+    margin: 0px;
+}
+.upper {
+    border-radius: 0rem 0.6rem 0.6rem;
+    grid-area: upper;
+    background: url('../assets/bg_upper.png') no-repeat;
+    background-size: cover;   
+    background-position: center;
+    display: grid;
+    grid-template-areas: "header header"
+    "welcome dimmer";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 80%;
+
+}
+.header {
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: grid;
+    z-index: 100;
+    grid-template-areas: "logo navbar";
+    grid-template-columns: 10% 90%;
+    justify-items: center;
+    transition: background-color 0.5s ease;
+}
+.navbar {
+    grid-area: navbar;
+    padding-right: 4rem;
+    margin-top: 0.5rem;
+}
+.navbar a {
+    font-family: "Roboto", serif;
+    position: relative;
+    color: #777777;
+    font-weight: 500;
+    font-size: 0.75rem; /* 12px in rem assuming the root font-size is 16px */
+    text-decoration: none;
+    margin-left: 4rem;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: 100%;
+    left: 0;
+    background-color: #777777;
+    transition: .3s;
+    
+}
+.navbar a:hover::before {
+    width: 100%;
+    background-color: #000;
+}
+.navbar a:hover {
+    color: #000;
+}
+.logo {
+    grid-area: logo;
+    margin-left: 0.5rem;
+}
+.logo_ayam {
+    width: 2.375rem;
+    height: auto;
+}
+.navbar a.active::before {
+    background-color: #000000;
+    width: 100%;
+}
+.navbar a.active {
+    color: #000000;
+}
+
+.welcome {
+    grid-area: welcome;
+}
+.welcome-text-box {
+    width: fit-content;
+    justify-items: center;
+    transform: translate(2rem, 1rem);
+    background-color: #EBF8F9;
+    border-radius: 30%;  
+    padding: 0% 6%; 
+}
+.text-welcome {
+    font-family: "Source Code Pro", serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000;
+}
+.temp-box {
+    padding: 0.5rem;
+    width: fit-content;
+    justify-items: center;
+    transform: translate(2.5rem, 0.5rem);
+}
+.temp-text {
+    font-family: "Raleway", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+}
+.dimmer {
+    justify-items: center;
+    grid-area: dimmer;
+    align-content: center;
+}
+.dimmer-outside {
+    width: 9.5rem;
+    height: 6rem;
+    background-color:#DDEDE6 ;
+    align-content: center;
+    justify-items: center;
+    border-radius: 1.5rem;
+}
+.dimmer-inside {
+    width: 7rem;
+    height: 3.5rem;
+}
+.dimmer-text {
+    font-family: "Nunito", serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #000000;
+}
+.dimmer-bg {
+    width: 100%;
+    height: 2.3rem;
+    background-color: #B4B4B4;
+    border-radius: 0.6rem;
+    overflow: hidden;
+}
+.dimmer-slider {
+    display: grid;
+    height: 2.3rem;
+    background-color: #C8E6C9;
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+    align-content: center;
+    justify-items: center;    
+}
+.dimmer-value {
+    font-family: "Nunito", serif;
+    padding-left: 0.2rem;
+    font-size: 0.75rem;
+    color: #000000;
+    font-weight: 800;
+}
+.card {
+    transform: translateY(1rem);
+    grid-area: card;
+    display: grid;
+    grid-template-areas: "suhu-box garis-tengah-atas lembab-box"
+    "garis-tengah-kiri kipas-kosong garis-tengah-kanan"
+    "hari-box garis-tengah-bawah roll-box";
+    grid-template-columns: 45% 10% 45%;
+    grid-template-rows: 45% 10% 45%;
+    justify-items: center;
+    align-content: center;
+}
+.suhu-box, .lembab-box, .hari-box, .roll-box {
+    justify-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+.hari-box, .roll-box {
+    margin-top: 1rem;
+}
+.suhu-box {
+    grid-area: suhu-box;
+}
+.lembab-box {
+    grid-area: lembab-box;
+}
+.hari-box {
+    grid-area: hari-box;
+}
+.roll-box {
+    grid-area: roll-box;
+}
+.suhu-card, .lembab-card, .hari-card, .roll-card {
+    display: grid;
+    width: 10.7rem;
+    height: 6.5rem;
+    overflow: hidden;
+    background-color: #FDFDFD;
+    border-radius: 1.6rem;
+    border-color: #6d6d6d77;
+    border-style: solid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 75% 25%;
+    border-width: 0.15rem;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3); /* Add this line for shadow */
+    /* box-shadow: horizontal vertical blur rgba(0, 0, 0, 0.1); */
+}
+.suhu-card {
+    grid-template-areas: "suhu-logo suhu-text"
+    "suhu-footer suhu-footer";
+}
+.lembab-card {
+    grid-template-areas: "lembab-logo lembab-text"
+    "lembab-footer lembab-footer";
+}
+.hari-card {
+    grid-template-areas: "hari-logo hari-text"
+    "hari-footer hari-footer";
+}
+.roll-card {
+    grid-template-areas: "roll-logo roll-text"
+    "roll-footer roll-footer";
+}
+.photo {
+    display: grid;
+    transform: translateY(4rem);
+    grid-area: photo;
+    background-color: #A0AC96;
+    width: 100%;
+    height: fit-content;
+    justify-items: center;
+    align-content: center;
+}
+.photo-box {
+    margin: 2rem 0rem;
+    width: 21.25rem;
+    height: 18rem;
+    border-radius: 0.6rem;
+    border-width: 0.3rem;
+    border-color: #FACC8F;
+    border-style: solid;
+    overflow: hidden;
+}
+.photo-img {
+    width: 100%;
+    height: 100%;
+}
+#cameraImage {
+    width: 100%;
+    height: 100%;
+}
+.suhu-logo, .lembab-logo, .hari-logo, .roll-logo {
+    justify-items: center;
+    align-content: center;
+}
+.suhu-logo {
+    grid-area: suhu-logo;
+}
+.lembab-logo {
+    grid-area: lembab-logo;
+}
+.hari-logo {
+    grid-area: hari-logo;
+}
+.roll-logo {
+    grid-area: roll-logo;
+}
+.suhu-text, .lembab-text, .hari-text, .roll-text {
+    justify-items: center;
+    align-content: center;    
+}
+.suhu-text {
+    grid-area: suhu-text;
+}
+.lembab-text {
+    grid-area: lembab-text;
+}
+.hari-text {
+    grid-area: hari-text;
+}
+.roll-text {
+    grid-area: roll-text;
+}
+.suhu-footer, .lembab-footer, .hari-footer, .roll-footer {
+    justify-items: center;
+    align-content: end;
+    display: grid;
+}
+.suhu-footer {
+    grid-area: suhu-footer;
+    grid-template-areas: "suhu-line"
+    "suhu-foot";
+    grid-template-rows: 10% 90%;
+}
+.lembab-footer {
+    grid-area: lembab-footer;
+}
+.hari-footer {
+    grid-area: hari-footer;
+}
+.roll-footer {
+    grid-area: roll-footer;
+}
+
+.circle-suhu, .circle-lembab, .circle-hari, .circle-roll {
+    padding: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: #FDFDFD;
+    border-radius: 50%;
+    border-color: #6d6d6d35;
+    border-style: solid;
+    border-width: 0.15rem;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+.lembab-logo img {
+    transform: translateX(-0.4rem);
+}
+.roll-logo img {
+    transform: translateX(0.1rem);
+}
+.suhu-foot, .lembab-foot, .hari-foot, .roll-foot {
+    transform: translateY(0.3rem);
+}
+.suhu-foot {
+    grid-area: suhu-foot;
+}
+.lembab-foot {
+    grid-area: lembab-foot;
+}
+.hari-foot {
+    grid-area: hari-foot;
+}
+.roll-foot {
+    grid-area: roll-foot;
+}
+.suhu-subtitle, .lembab-subtitle, .hari-subtitle, .roll-subtitle {
+    transform: translateY(-0.2rem);
+    font-size: 0.6rem;
+    font-weight: 900;
+    color: #000000;
+    font-family: "Nunito", serif;
+}
+.suhu-value, .lembab-value, .hari-value, .roll-value {
+    transform: translateY(0.5rem);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000;
+    font-family: "Nunito", serif;
+}
+.suhu-line, .lembab-line, .hari-line, .roll-line {
+    width: 90%;
+    height: 0.1rem;
+    background-color: #6d6d6d35;
+}
+.suhu-line {
+    grid-area: suhu-line;
+    transform: translateY(0.25rem);
+}
+.lembab-line {
+    grid-area: lembab-line;
+}
+.hari-line {
+    grid-area: hari-line;
+}
+.roll-line {
+    grid-area: roll-line;
+}
+.circle-photo {
+    transform: translateY(19rem);
+    display: grid;
+    position: absolute;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #FACC8F;
+    border-radius: 50%;
+    border-color: #A0AC96;
+    border-style: solid;
+    border-width: 0.2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
+}
+.bulat1, .bulat2, .bulat3 {
+    position: absolute;
+    display: grid;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #FABB0B;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.2rem;
+    border-color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+.isi-bulat1, .isi-bulat3 {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #533B3B;
+    border-radius: 50%;
+}
+.bulat1 {
+    transform: translateY(-2.5rem);
+}
+.bulat3 {
+    transform: translateY(-1.5rem);
+}
+.bulat2 {
+    transform: translateY(6.6rem);
+}
+.isi-bulat2 {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-content: center;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.isi-bulat2 img {
+    width: 80%;
+    height: auto;
+    transition: transform 1s ease;
+}
+.rotate {
+    animation: rotate 0.7s linear infinite;
+}
+.garis-tengah-atas, .garis-tengah-bawah {
+    width: 1px;
+    background-color: #D7D7D7;
+}
+.garis-tengah-atas {
+    transform: translateY(1rem);
+    height: 75%;
+    grid-area: garis-tengah-atas;
+}
+.garis-tengah-bawah {
+    transform: translateY(1.8rem);
+    grid-area: garis-tengah-bawah;
+    height: 90%;
+}
+.garis-tengah-kiri, .garis-tengah-kanan {
+    width: 95%;
+    height: 1px;
+    background-color: #D7D7D7;
+}
+.garis-tengah-kiri {
+    grid-area: garis-tengah-kiri;
+    transform: translate(-1rem, 1.3rem);
+}
+.garis-tengah-kanan {
+    transform: translate(1rem, 1.3rem);
+    grid-area: garis-tengah-kanan;
+}
+.kipas-kosong {
+    grid-area: kipas-kosong;
+}
+.button-download {
+    margin: 1rem;
+    width:fit-content;
+    height: fit-content;
+    justify-items: center;
+    align-content: center;
+    background-color: #FACC8F;
+    padding: 1rem;
+}
+.download-text {
+    font-family: "Nunito", serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000000;
+}
+/* Media query for small windows */
+@media (max-width: 330px) {
+    .navbar {
+        padding-right: 1rem;
+    }
+}

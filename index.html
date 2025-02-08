@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Coop Monitoring</title>
+    <link rel="icon" type="image/icon" href="assets/coop_logo.ico">
+    <link rel="stylesheet" href="./style/style.css">
+    <script type="module" src="./script/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <div class="upper">
+            <header id="header" class="header">
+                <a href="#" class="logo"><img class="logo_ayam" src="assets/logo.png" alt=""></a>
+                <nav class="navbar">
+                    <a href="#" class="active">HOME</a>
+                    <a href="./collection.html">COLLECTION</a>
+                </nav>
+            </header>
+            <div class="welcome">
+                <div class="welcome-text-box">
+                    <div class="text-welcome">WELCOME<br>YUDI!</div>
+                </div>
+                <div class="temp-box">
+                    <div id="temp_room" class="temp-text"></div>
+                </div>
+            </div>
+            <div class="dimmer">
+                <div class="dimmer-outside">
+                    <div class="dimmer-inside">
+                        <div class="dimmer-text">AC DIMMER</div>
+                        <div class="dimmer-bg">
+                            <div class="dimmer-slider">
+                                <div id="dimmer_ac1" class="dimmer-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bulat1">
+                <div class="isi-bulat1"></div>
+            </div>
+            <div class="suhu-box">
+                <div class="suhu-card">
+                    <div class="suhu-logo">
+                        <div class="circle-suhu"><img src="./assets/logo-suhu.png" alt=""></div>
+                    </div>
+                    <div class="suhu-text">
+                        <div class="suhu-subtitle">TEMPERATURE</div>
+                        <div id="suhu_id" class="suhu-value"></div>
+                    </div>
+                    <div class="suhu-footer">
+                        <div class="suhu-line"></div>
+                        <div class="suhu-foot"><img src="./assets/suhu-foot.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="garis-tengah-atas"></div>
+            <div class="lembab-box">
+                <div class="lembab-card">
+                    <div class="lembab-logo">
+                        <div class="circle-lembab"><img src="./assets/water-logo.png" alt=""></div>
+                    </div>
+                    <div class="lembab-text">
+                        <div class="lembab-subtitle">HUMIDITY</div>
+                        <div id="lembab_id" class="lembab-value"></div>
+                    </div>
+                    <div class="lembab-footer">
+                        <div class="lembab-line"></div>
+                        <div class="lembab-foot"><img src="./assets/lembab-foot.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="garis-tengah-kiri"></div>
+            <div class="bulat2">
+                <div class="isi-bulat2"><img src="./assets/fan1.png" alt=""></div>
+            </div>
+            <div class="kipas-kosong"></div>
+            <div class="hari-box">
+                <div class="hari-card">
+                    <div class="hari-logo">
+                        <div class="circle-hari"><img src="./assets/day-logo.png" alt=""></div>
+                    </div>
+                    <div class="hari-text">
+                        <div class="hari-subtitle">DAYS</div>
+                        <div id="hari_id" class="hari-value"></div>
+                    </div>
+                    <div class="hari-footer">
+                        <div class="hari-line"></div>
+                        <div class="hari-foot"><img src="./assets/hari-foot.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="garis-tengah-kanan"></div>
+            <div class="roll-box">
+                <div class="roll-card">
+                    <div class="roll-logo">
+                        <div class="circle-roll"><img src="./assets/motor-logo.png" alt=""></div>
+                    </div>
+                    <div class="roll-text">
+                        <div class="roll-subtitle">ROLL EGG</div>
+                        <div id="roll_id" class="roll-value"></div>
+                    </div>
+                    <div class="roll-footer">
+                        <div class="roll-line"></div>
+                        <div class="roll-foot"><img src="assets/motor-foot.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="garis-tengah-bawah"></div>
+        </div>
+        <div class="photo">
+            <div class="bulat3">
+                <div class="isi-bulat3"></div>
+            </div>
+            <div class="photo-box">
+                <img id="cameraImage" src="" alt="" />
+            </div>
+            <div class="circle-photo"><img src="./assets/photo-icon.png" alt=""></div>
+            <div class="button-download"><a id="downloadLink" class="download-text">DOWNLOAD</a></div>
+        </div>
+    </div>
+</body>
+</html>
