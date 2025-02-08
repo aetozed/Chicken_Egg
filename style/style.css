@@ -125,6 +125,7 @@ body {
     align-content: center;
 }
 .dimmer-outside {
+    display: grid;
     align-items: center;
     justify-content: center;
     width: 9.5rem;
@@ -259,8 +260,6 @@ body {
     height: 100%;
 }
 .suhu-logo, .lembab-logo, .hari-logo, .roll-logo {
-    justify-content: center;
-    align-items: center;
     justify-items: center;
     align-content: center;
 }
