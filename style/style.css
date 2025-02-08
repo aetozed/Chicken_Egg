@@ -125,7 +125,6 @@ body {
     align-content: center;
 }
 .dimmer-outside {
-    transform: translateY(1rem);
     width: 9.5rem;
     height: 6rem;
     background-color:#DDEDE6 ;
