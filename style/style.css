@@ -493,3 +493,10 @@ body {
         padding-right: 1rem;
     }
 }
+
+/* Media query for small windows */
+@media (max-width: 280px) {
+    .navbar {
+        padding-right: 8px;
+    }
+}
